@@ -1,0 +1,105 @@
+@use 'sass:color'
+@use 'global'
+
+.main-content
+    display: grid
+    grid-template-columns: 2fr 1fr
+
+    height: 100%
+    overflow: hidden
+
+    #user-info
+        background-color: #eeeeee
+        
+        height: 100%
+        box-sizing: content-box
+
+        @include global.flex(center, center, column)
+
+        img
+            width: 200px
+            height: 200px
+        #username-span
+            font-size: 32px
+            font-weight: bold
+
+#posts
+    padding: 50px
+
+    background-color: #ffffff
+
+    overflow-y: scroll
+
+    position: relative
+
+    height: inherit
+
+    #title-id
+        @include global.flex(space-between, center)
+        
+    #add-post
+        $button-width: 50px
+        $button-height: 50px
+
+        $absolute-gap: 10px
+
+        width: $button-width
+        height: $button-height
+
+        background-color: global.$header-color
+        border: 0px solid black
+        cursor: pointer
+        border-radius: 50%
+
+        position: absolute
+        top: calc(100% - $button-height - $absolute-gap)
+        left: calc(100% - $button-width - $absolute-gap)
+
+        @include global.flex(center, center)
+
+        &:hover
+            background-color: color.adjust(global.$header-color, $lightness:5%)
+
+        img
+            width: 75%
+            height: 75%
+        
+    .post
+
+        margin: 20px
+        padding: 20px
+
+        background-color: #eeeeee
+        border: 1px solid gray
+
+        position: relative
+
+        &:not(:last-child)
+            margin-bottom: 30px
+
+        #delete-button    
+            $button-width: 30px
+            $button-height: 30px
+
+            $absolute-gap: 12px
+
+            width: $button-width
+            height: $button-height
+
+            background-color: global.$header-color
+            border: 0px solid black
+            cursor: pointer
+            border-radius: 5px
+
+            position: absolute
+            top: calc(100% - $button-height - $absolute-gap)
+            left: calc(100% - $button-width - $absolute-gap)
+
+            @include global.flex(center, center)
+
+            &:hover
+                background-color: color.adjust(global.$header-color, $lightness:5%)
+
+            img
+                width: 75%
+                height: 75%

@@ -1,0 +1,99 @@
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+.main-content #user-info {
+  background-color: #eeeeee;
+  height: 100%;
+  box-sizing: content-box;
+}
+.main-content #user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-content #user-info img {
+  width: 200px;
+  height: 200px;
+}
+.main-content #user-info #username-span {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#posts {
+  padding: 50px;
+  background-color: #ffffff;
+  overflow-y: scroll;
+  position: relative;
+  height: inherit;
+}
+#posts #title-id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#posts #add-post {
+  width: 50px;
+  height: 50px;
+  background-color: #727D73;
+  border: 0px solid black;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(100% - 50px - 10px);
+  left: calc(100% - 50px - 10px);
+}
+#posts #add-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#posts #add-post:hover {
+  background-color: rgb(126.60041841, 137.89958159, 127.6276150628);
+}
+#posts #add-post img {
+  width: 75%;
+  height: 75%;
+}
+#posts .post {
+  margin: 20px;
+  padding: 20px;
+  background-color: #eeeeee;
+  border: 1px solid gray;
+  position: relative;
+}
+#posts .post:not(:last-child) {
+  margin-bottom: 30px;
+}
+#posts .post #delete-button {
+  width: 30px;
+  height: 30px;
+  background-color: #727D73;
+  border: 0px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute;
+  top: calc(100% - 30px - 12px);
+  left: calc(100% - 30px - 12px);
+}
+#posts .post #delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#posts .post #delete-button:hover {
+  background-color: rgb(126.60041841, 137.89958159, 127.6276150628);
+}
+#posts .post #delete-button img {
+  width: 75%;
+  height: 75%;
+}
+
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block title %}
+  Home Page
+{% endblock title %}
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}" />
+{% endblock styles %}
+{%
+block body %}
+<div id="posts">
+  {% if posts %}
+    {% for post in posts %}
+      <div class="post">
+        <div id="title-id">
+          <h2>{{ post.title }}</h2>
+          <span>#{{ post.id }}</span>
+        </div>
+        <span><strong>@{{ post.get_author_username() }} (#{{ post.post_author }})</strong> - at {{ post.time_created.date() }}</span>
+        <br />
+        <p>{{ post.content }}</p>
+
+        {% if post.post_author == session['user_id'] %}
+          <a href="{{ url_for('delete', post_id=post.id) }}">
+            <button id="delete-button">
+              <img src="{{ url_for('static', filename='assets/trashcan.svg') }}" alt="trash-can" />
+            </button>
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <h2>No posts here... yet.</h2>
+  {% endif %}
+
+  <a href="{{ url_for('writepost') }}">
+    <button id="add-post">
+      <img src="{{ url_for('static', filename='assets/plus.svg') }}" alt="plus-sign" />
+    </button>
+  </a>
+</div>
+
+<div id="user-info">
+  <img width="25"
+       height="25"
+       src="{{ url_for('static', filename='assets/sampleUserIcon.png') }}"
+       alt="user-image" />
+  <span>Logged in as:</span>
+  <span id="username-span">@{{ session['username'] }}</span>
+</div>
+
+<script>
+    const addButton = document.querySelector('#add-post');
+    const postScroller = document.querySelector('#posts');
+
+    postScroller.addEventListener('scroll', () => {
+        const scrollTop = postScroller.scrollTop;
+        const scrollLeft = postScroller.scrollLeft;
+
+        // Adjust position
+        addButton.style.transform = `translate(${scrollLeft}px, ${scrollTop}px)`
+        console.log(`Scrolled: ${scrollLeft}px, ${scrollTop}px`)
+    });
+</script>
+{% endblock body %}

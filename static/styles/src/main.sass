@@ -1,0 +1,57 @@
+@use "sass:color"
+@use "global"
+
+*
+    box-sizing: border-box
+
+body
+    font-family: global.$font-family
+    margin: 0px
+
+    width: 100svw
+    height: 100svh
+
+    display: grid
+    grid-template-rows: global.$header-height 1fr
+
+    .main-content
+        width: 100%
+        height: 100%
+
+header
+
+    background-color: global.$header-color
+    color: white
+
+    height: global.$header-height
+
+    padding: 0px 30px 
+    @include global.flex(space-between, center)
+
+    .navbar
+        $separator-color: color.adjust(global.$header-color, $lightness:15%)
+        $separator-style: 1px solid $separator-color
+
+        $focus-color: color.adjust(global.$header-color, $lightness:5%)
+
+        list-style: none
+        height: 100%
+
+        @include global.flex(flex-end, center)
+
+        a
+            border-left: $separator-style
+            width: 150px
+            height: inherit
+
+            text-align: center
+            color: inherit
+            text-decoration: none
+
+            @include global.flex(center, center)
+
+            &:last-child
+                border-right: $separator-style
+            
+            &:hover
+                background-color: $focus-color

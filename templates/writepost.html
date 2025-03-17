@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}
+  Write Post
+{% endblock title %}
+{%
+block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}" />
+
+<style>
+    header .navbar {
+        display: flex;
+    }
+
+    h2 {
+        margin-bottom: 0px
+    }
+
+    p {
+        margin-top: 0px
+    }
+</style>
+{% endblock styles %}
+
+{% block body %}
+  <div class="login-container">
+    <h2>Write what's on your mind...</h2>
+    <p>
+      Posting as <strong>@{{ session['username'] }}</strong>
+    </p>
+
+    <form action="{{ url_for('writepost') }}" method="post" id="write-post">
+      <div class="input-fields">
+        <label for="username">Title</label>
+        <input type="text" name="title" />
+        <label for="username">Content</label>
+        <textarea name="content" rows="5"></textarea>
+      </div>
+
+      <!-- CSRF Token -->
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <input id="login-button" type="submit" value="Post!" />
+    </form>
+    {% if message %}<div class="alert">{{ message }}</div>{% endif %}
+  </div>
+{% endblock body %}

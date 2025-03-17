@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block title %} Sign Up {% endblock title %} {%
+block styles %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/login.css') }}"
+/>
+{% endblock styles %} {% block body %}
+<div class="login-container">
+    <h1>Sign Up</h1>
+    <form method="post">
+        <div class="input-fields">
+            <label for="username">Username</label>
+            <input type="text" name="username" />
+            <label for="username">Password</label>
+            <input type="password" name="password" />
+            <label for="username">Confirm Password</label>
+            <input type="password" name="confirm-password" />
+        </div>
+
+        <!-- CSRF Token -->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <input id="login-button" type="submit" value="Sign Up" />
+    </form>
+    {% if message %}
+    <div class="alert">{{ message }}</div>
+    {% endif %}
+    <p>Already have an account? <a href="{{ url_for('login') }}">Log In!</a></p>
+</div>
+{% endblock body %}

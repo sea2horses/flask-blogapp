@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  {% if username %}
+    <title>@{{ username }}</title>
+  {% else %}
+    <title>User Not Found</title>
+  {% endif %}
+{% endblock head %}
+
+{% block body %}
+  {% if username %}
+    <h1>@{{ username }}'s Page</h1>
+  {% else %}
+    <h1>This user doesn't exist</h1>
+  {% endif %}
+{% endblock body %}

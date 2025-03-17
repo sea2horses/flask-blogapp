@@ -1,0 +1,78 @@
+header .navbar {
+  display: none;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-container {
+  padding: 25px 50px;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  text-align: center;
+}
+.login-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-container form .input-fields {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.login-container form .input-fields {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.login-container form .input-fields input, .login-container form .input-fields textarea {
+  width: inherit;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 18px;
+  border: 1px solid #dddddd;
+  border-bottom: 1px solid black;
+  outline: 0px;
+}
+.login-container form .input-fields input:focus, .login-container form .input-fields textarea:focus {
+  border: 1px solid green;
+}
+.login-container form .input-fields textarea {
+  resize: none;
+}
+.login-container form #login-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #727D73;
+  color: white;
+  font-size: 18px;
+  border: 0px;
+  cursor: pointer;
+}
+.login-container form input, .login-container form textarea {
+  font-family: "Inter", sans-serif;
+}
+.login-container .alert {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ffaaaa;
+  border: 1px solid #ff5858;
+  border-radius: 5px;
+}
+.login-container .alert {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+/*# sourceMappingURL=login.css.map */

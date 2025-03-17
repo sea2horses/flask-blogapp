@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}
+  Write Post
+{% endblock title %}
+{%
+block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}" />
+
+<style>
+    header .navbar {
+        display: flex;
+    }
+
+    h2 {
+        margin-bottom: 0px
+    }
+
+    p {
+        margin-top: 0px
+    }
+</style>
+{% endblock styles %}
+
+{% block body %}
+  <div class="login-container">
+    <h2>Are you sure?</h2>
+    <p>
+      Deleting post #{{ post.id }} <strong>({{ post.title }})</strong>
+    </p>
+
+    <form action="{{ url_for('delete', post_id=post.id) }}" method="post">
+      <!-- CSRF Token -->
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <input id="login-button" type="submit" value="Delete" />
+    </form>
+    {% if message %}<div class="alert">{{ message }}</div>{% endif %}
+  </div>
+{% endblock body %}

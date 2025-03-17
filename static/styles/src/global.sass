@@ -1,0 +1,10 @@
+$header-color: #727D73
+$header-height: 100px
+$font-family: 'Inter', sans-serif
+
+@mixin flex($justify-content, $align-items, $direction: row)
+    &
+        display: flex
+        justify-content: $justify-content
+        align-items: $align-items
+        flex-direction: $direction

@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  width: 100svw;
+  height: 100svh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+}
+body .main-content {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 600) {
+  header .branding h1 {
+    font-size: 26px;
+  }
+}
+header {
+  background-color: #727D73;
+  color: white;
+  height: 100px;
+  padding: 0px 30px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header .navbar {
+  list-style: none;
+  height: 100%;
+}
+header .navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+header .navbar a {
+  border-left: 1px solid rgb(153.2740585774, 162.2259414226, 154.0878661088);
+  width: 150px;
+  height: inherit;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+header .navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+header .navbar a:last-child {
+  border-right: 1px solid rgb(153.2740585774, 162.2259414226, 154.0878661088);
+}
+header .navbar a:hover {
+  background-color: rgb(126.60041841, 137.89958159, 127.6276150628);
+}
+
+/*# sourceMappingURL=main.css.map */
